@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Sports Stories - Stories</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { background: linear-gradient(180deg, #061028 0%, #0A1A3A 60%, #040814 100%); color: #F7F9FA; font-family: "Open Sans", sans-serif; }
+    .navbar { background: rgba(6, 16, 40, 0.8) !important; backdrop-filter: blur(10px); }
+    .brand-logo { width: 36px; height: 36px; border-radius: 12px; background: linear-gradient(135deg, #FFC947, #2CD18A); }
+    .card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); }
+    .section-title { font-family: "Montserrat", sans-serif; font-weight: 800; }
+    .map-svg { width: 100%; height: 320px; background: rgba(255,255,255,0.08); border-radius: 18px; border: 1px solid rgba(255,255,255,0.14); }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <div class="brand-logo"></div>
+        <span class="fw-bold">Global Sports Stories</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="stories.html">Stories</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title mb-4">Stories</h2>
+
+      <!-- Search + Filter -->
+      <div class="row g-2 mb-4">
+        <div class="col-md-8">
+          <input id="searchInput" class="form-control" placeholder="Search stories..." />
+        </div>
+        <div class="col-md-4">
+          <select id="regionFilter" class="form-select">
+            <option value="all">All Regions</option>
+            <option value="asia">Asia</option>
+            <option value="europe">Europe</option>
+            <option value="americas">Americas</option>
+            <option value="africa">Africa</option>
+            <option value="oceania">Oceania</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row g-4" id="storyGrid">
+        <!-- JS will generate story cards here -->
+      </div>
+
+      <!-- Map -->
+      <h2 class="section-title mt-5 mb-4">Interactive Map</h2>
+      <div class="map-svg p-3">
+        <svg viewBox="0 0 1000 500" style="width:100%; height:100%;">
+          <rect x="580" y="80" width="200" height="120" fill="#2CD18A" opacity="0.2" id="asia" />
+          <text x="680" y="150" fill="#fff" text-anchor="middle">Asia</text>
+
+          <rect x="470" y="50" width="140" height="90" fill="#FFC947" opacity="0.2" id="europe" />
+          <text x="540" y="100" fill="#fff" text-anchor="middle">Europe</text>
+
+          <rect x="70" y="120" width="240" height="140" fill="#5AD2FF" opacity="0.2" id="americas" />
+          <text x="190" y="190" fill="#fff" text-anchor="middle">Americas</text>
+
+          <rect x="420" y="210" width="160" height="120" fill="#FF6B6B" opacity="0.2" id="africa" />
+          <text x="500" y="270" fill="#fff" text-anchor="middle">Africa</text>
+
+          <rect x="830" y="250" width="140" height="110" fill="#8B5CF6" opacity="0.2" id="oceania" />
+          <text x="900" y="300" fill="#fff" text-anchor="middle">Oceania</text>
+        </svg>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STORY MODAL -->
+  <div class="modal fade" id="storyModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title" id="storyTitle"></h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img id="storyImage" class="img-fluid rounded mb-3" alt="Story Image">
+          <p id="storyDescription" class="text-muted"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const stories = [
+      { id: 1, title: "Breaking Barriers: A Marathoner’s Journey", region: "asia", image: "https://via.placeholder.com/600x300?text=Story+1", description: "A runner’s story of resilience, training, and triumph." },
+      { id: 2, title: "From Local Fields to International Podiums", region: "europe", image: "https://via.placeholder.com/600x300?text=Story+2", description: "How grassroots sports build champions." },
+      { id: 3, title: "Sports for Change: Youth Voices", region: "americas", image: "https://via.placeholder.com/600x300?text=Story+3", description: "How sports create hope and change communities." },
+      { id: 4, title: "Power & Grace: A Gymnast’s Story", region: "africa", image: "https://via.placeholder.com/600x300?text=Story+4", description: "Strength, discipline, and dedication in the world of gymnastics." },
+      { id: 5, title: "Surfing the Waves of Change", region: "oceania", image: "https://via.placeholder.com/600x300?text=Story+5", description: "A story of courage, nature, and athletic spirit." }
+    ];
+
+    function renderStories(filterRegion = "all", search = "") {
+      const grid = document.getElementById("storyGrid");
+      grid.innerHTML = "";
+
+      const filtered = stories.filter(s => {
+        const matchesRegion = filterRegion === "all" || s.region === filterRegion;
+        const matchesSearch = s.title.toLowerCase().includes(search.toLowerCase());
+        return matchesRegion && matchesSearch;
+      });
+
+      filtered.forEach(s => {
+        grid.innerHTML += `
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img src="${s.image}" class="card-img-top" alt="${s.title}">
+              <div class="card-body">
+                <h5 class="card-title">${s.title}</h5>
+                <p class="card-text text-muted">${s.description}</p>
+                <button class="btn btn-warning" onclick="openStory(${s.id})">Read More</button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function openStory(id) {
+      const story = stories.find(s => s.id === id);
+      document.getElementById("storyTitle").innerText = story.title;
+      document.getElementById("storyImage").src = story.image;
+      document.getElementById("storyDescription").innerText = story.description;
+      const modal = new bootstrap.Modal(document.getElementById("storyModal"));
+      modal.show();
+    }
+
+    document.getElementById("regionFilter").addEventListener("change", () => {
+      renderStories(document.getElementById("regionFilter").value, document.getElementById("searchInput").value);
+    });
+
+    document.getElementById("searchInput").addEventListener("input", () => {
+      renderStories(document.getElementById("regionFilter").value, document.getElementById("searchInput").value);
+    });
+
+    ["asia", "europe", "americas", "africa", "oceania"].forEach(region => {
+      document.getElementById(region).addEventListener("click", () => {
+        document.getElementById("regionFilter").value = region;
+        renderStories(region, document.getElementById("searchInput").value);
+      });
+    });
+
+    renderStories();
+  </script>
+
+</body>
+</html>
