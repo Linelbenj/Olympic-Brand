@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hope Community | Word of God</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="img/logo3.jpg" type="image/png">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --hope-blue: #0081C8;
+  --hope-black: #000;
+}
+
+/* GLOBAL */
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--hope-black);
+}
+
+/* NAVBAR */
+.navbar {
+  border-bottom: 4px solid var(--hope-blue);
+}
+.brand-hope {
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+.brand-hope span {
+  color: var(--hope-blue);
+}
+.nav-link.active {
+  font-weight: 900;
+  color: var(--hope-blue) !important;
+  border-bottom: 3px solid var(--hope-blue);
+}
+
+/* HERO */
+.hero {
+  padding: 120px 0;
+  background:
+    linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.9)),
+    url("https://images.unsplash.com/photo-1519681393784-d120267933ba") center/cover;
+}
+
+/* TITLES */
+.section-title {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* BLUE LINE */
+.blue-line {
+  border-left: 6px solid var(--hope-blue);
+  padding-left: 20px;
+}
+
+/* BUTTON */
+.btn-hope {
+  background: var(--hope-black);
+  color: #fff;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 14px 35px;
+  border-radius: 0;
+}
+.btn-hope:hover {
+  background: var(--hope-blue);
+}
+
+/* BIBLE BOX */
+.bible-card {
+  border: none;
+  background: #f8f9fa;
+  border-left: 10px solid var(--hope-black);
+  transition: .3s cubic-bezier(.16,1,.3,1);
+}
+.bible-card:hover {
+  border-left-color: var(--hope-blue);
+  box-shadow: 0 18px 30px rgba(0,0,0,.1);
+}
+
+/* VERSE BOX */
+.verse-box {
+  background: #fff;
+  border-left: 10px solid var(--hope-blue);
+  padding: 25px;
+  margin-top: 20px;
+  box-shadow: 0 18px 30px rgba(0,0,0,.05);
+}
+
+/* ANIMATIONS */
+.fade-in {
+  animation: fadeIn .8s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero {
+    padding: 70px 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+  <div class="container">
+    <a class="navbar-brand brand-hope" href="index.html">
+      HOPE <span>COMMUNITY</span>
+    </a>
+
+    <!-- HAMBURGER MENU -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- NAV LINKS -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto fw-bold">
+        <li class="nav-item"><a class="nav-link" href="missions.html">MISSIONS</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">WORD OF GOD</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero fade-in">
+  <div class="container">
+    <h1 class="section-title mb-3">Word of God</h1>
+    <p class="lead col-lg-7">
+      “Your word is a lamp to my feet and a light to my path.” — Psalm 119:105
+    </p>
+  </div>
+</section>
+
+<!-- BIBLE READER -->
+<section class="container my-5 py-5 fade-in">
+  <h2 class="section-title mb-4">Read the Bible</h2>
+
+  <div class="row g-3 mb-4">
+    <div class="col-md-4">
+     <select id="book" class="form-select">
+  <optgroup label="OLD TESTAMENT">
+    <option>Genesis</option><option>Exodus</option><option>Leviticus</option>
+    <option>Numbers</option><option>Deuteronomy</option><option>Joshua</option>
+    <option>Judges</option><option>Ruth</option><option>1 Samuel</option>
+    <option>2 Samuel</option><option>1 Kings</option><option>2 Kings</option>
+    <option>1 Chronicles</option><option>2 Chronicles</option><option>Ezra</option>
+    <option>Nehemiah</option><option>Esther</option><option>Job</option>
+    <option>Psalms</option><option>Proverbs</option><option>Ecclesiastes</option>
+    <option>Song of Solomon</option><option>Isaiah</option><option>Jeremiah</option>
+    <option>Lamentations</option><option>Ezekiel</option><option>Daniel</option>
+    <option>Hosea</option><option>Joel</option><option>Amos</option>
+    <option>Obadiah</option><option>Jonah</option><option>Micah</option>
+    <option>Nahum</option><option>Habakkuk</option><option>Zephaniah</option>
+    <option>Haggai</option><option>Zechariah</option><option>Malachi</option>
+  </optgroup>
+
+  <optgroup label="NEW TESTAMENT">
+    <option>Matthew</option><option>Mark</option><option>Luke</option>
+    <option>John</option><option>Acts</option><option>Romans</option>
+    <option>1 Corinthians</option><option>2 Corinthians</option>
+    <option>Galatians</option><option>Ephesians</option><option>Philippians</option>
+    <option>Colossians</option><option>1 Thessalonians</option>
+    <option>2 Thessalonians</option><option>1 Timothy</option><option>2 Timothy</option>
+    <option>Titus</option><option>Philemon</option><option>Hebrews</option>
+    <option>James</option><option>1 Peter</option><option>2 Peter</option>
+    <option>1 John</option><option>2 John</option><option>3 John</option>
+    <option>Jude</option><option>Revelation</option>
+  </optgroup>
+</select>
+
+    </div>
+
+    <div class="col-md-4">
+      <input id="chapter" class="form-control" placeholder="Chapter (e.g. 3)">
+    </div>
+
+    <div class="col-md-4">
+      <button class="btn btn-hope w-100" onclick="loadBible()">Read</button>
+    </div>
+  </div>
+
+  <div id="result"></div>
+</section>
+
+<!-- SCRIPT -->
+<script>
+async function loadBible() {
+  const book = document.getElementById("book").value;
+  const chapter = document.getElementById("chapter").value;
+  const result = document.getElementById("result");
+
+  if (!chapter) {
+    result.innerHTML = `<div class="alert alert-warning">Please enter a chapter number.</div>`;
+    return;
+  }
+
+  try {
+    const res = await fetch(`https://bible-api.com/${book}%20${chapter}`);
+    const data = await res.json();
+
+    if (data.error) {
+      result.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
+      return;
+    }
+
+    let html = `<div class="verse-box"><h5 class="fw-bold mb-3">${data.reference}</h5>`;
+    data.verses.forEach(v => {
+      html += `<p><b>${v.verse}</b> ${v.text}</p>`;
+    });
+    html += `</div>`;
+    result.innerHTML = html;
+
+  } catch {
+    result.innerHTML = `<div class="alert alert-danger">Unable to load verses.</div>`;
+  }
+}
+</script>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

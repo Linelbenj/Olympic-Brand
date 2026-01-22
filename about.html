@@ -1,95 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Global Sports Stories - About</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hope Community | About</title>
+<link rel="icon" href="img/logo1.jpg" type="image/png">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <style>
-    body { background: linear-gradient(180deg, #061028 0%, #0A1A3A 60%, #040814 100%); color: #F7F9FA; font-family: "Open Sans", sans-serif; }
-    .navbar { background: rgba(6, 16, 40, 0.8) !important; backdrop-filter: blur(10px); }
-    .brand-logo { width: 36px; height: 36px; border-radius: 12px; background: linear-gradient(135deg, #FFC947, #2CD18A); }
-    .card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); }
-    .section-title { font-family: "Montserrat", sans-serif; font-weight: 800; }
-  </style>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --hope-blue: #0081C8;
+  --hope-black: #000;
+}
+
+/* GLOBAL */
+body {
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+  border-bottom: 4px solid var(--hope-blue);
+}
+.brand-hope {
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+.brand-hope span {
+  color: var(--hope-blue);
+}
+.nav-link.active {
+  font-weight: 900;
+  color: var(--hope-blue) !important;
+  border-bottom: 3px solid var(--hope-blue);
+}
+
+/* HERO */
+.hero {
+  padding: 100px 0;
+  background:
+    linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.9)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") center/cover;
+}
+
+/* TITLES */
+.section-title {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* CARD */
+.about-card {
+  background: #f8f9fa;
+  border-left: 10px solid var(--hope-black);
+  padding: 30px;
+  transition: .3s cubic-bezier(.16,1,.3,1);
+  opacity: 0;
+  transform: translateY(20px);
+}
+.about-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.about-card:hover {
+  border-left-color: var(--hope-blue);
+  box-shadow: 0 18px 30px rgba(0,0,0,.1);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero {
+    padding: 70px 0;
+  }
+  .about-card {
+    padding: 20px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-        <div class="brand-logo"></div>
-        <span class="fw-bold">Global Sports Stories</span>
-      </a>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+  <div class="container">
+    <a class="navbar-brand brand-hope" href="index.html">
+      HOPE <span>COMMUNITY</span>
+    </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!-- HAMBURGER MENU -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="stories.html">Stories</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+    <!-- NAV LINKS -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto fw-bold">
+        <li class="nav-item"><a class="nav-link" href="missions.html">MISSIONS</a></li>
+        <li class="nav-item"><a class="nav-link" href="word.html">WORD OF GOD</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">ABOUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1 class="section-title mb-3">About Hope Community</h1>
+    <p class="lead col-lg-7">
+      A global faith-based community running the race with purpose, prayer, and hope.
+    </p>
+  </div>
+</section>
+
+<!-- ABOUT CONTENT -->
+<section class="container my-5 py-5">
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="about-card h-100">
+        <h4 class="fw-bold mb-3">Who We Are</h4>
+        <p>
+          Hope Community is a global faith-based movement dedicated to spreading the
+          message of Christ through prayer, service, and fellowship.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="about-card h-100">
+        <h4 class="fw-bold mb-3">Our Mission</h4>
+        <p>
+          To inspire people to live with purpose, strengthen communities through love,
+          and run the race of faith together toward an eternal crown.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="about-card">
+        <h4 class="fw-bold mb-3">Our Values</h4>
+        <ul>
+          <li>Faith-centered living</li>
+          <li>Community service</li>
+          <li>Global outreach</li>
+          <li>Prayer and discipleship</li>
         </ul>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <section class="py-5">
-    <div class="container">
-      <h2 class="section-title mb-4">About Global Sports Stories</h2>
-      <p class="text-muted">
-        Global Sports Stories is a platform that celebrates the spirit of sport, human achievement, and global unity.
-      </p>
+<!-- ANIMATION SCRIPT -->
+<script>
+const cards = document.querySelectorAll('.about-card');
 
-      <div class="row g-4 mt-4">
-        <div class="col-md-6">
-          <div class="card p-4">
-            <h5 class="fw-bold">Mission</h5>
-            <p class="text-muted">To share inspirational sports stories from around the world.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card p-4">
-            <h5 class="fw-bold">Vision</h5>
-            <p class="text-muted">To connect people through the power of sport and human spirit.</p>
-          </div>
-        </div>
-      </div>
+function revealOnScroll() {
+  const triggerBottom = window.innerHeight / 1.2;
 
-      <h2 class="section-title mt-5 mb-4">Contact Us</h2>
+  cards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
 
-      <div class="card p-4">
-        <form>
-          <div class="mb-3">
-            <label class="form-label">Name</label>
-            <input class="form-control" placeholder="Your name">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input class="form-control" placeholder="Your email">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Message</label>
-            <textarea class="form-control" rows="4" placeholder="Your message"></textarea>
-          </div>
-          <button class="btn btn-warning">Send Message</button>
-        </form>
-      </div>
+    if (cardTop < triggerBottom) {
+      card.classList.add('show');
+    }
+  });
+}
 
-    </div>
-  </section>
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
 
-  <footer class="text-center py-4" style="background: rgba(6, 16, 40, 0.8);">
-    <p style="color: rgba(247,249,250,0.7);">© 2026 Global Sports Stories</p>
-  </footer>
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
