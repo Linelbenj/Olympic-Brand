@@ -1,240 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Hope Community | Word of God</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="img/logo3.jpg" type="image/png">
+  <meta charset="UTF-8">
+  <title>Hope Community | Word of God</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/logo3.jpg" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --hope-blue: #0081C8;
+      --hope-black: #000;
+    }
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--hope-black);
+    }
 
-<style>
-:root {
-  --hope-blue: #0081C8;
-  --hope-black: #000;
-}
+    .navbar {
+      border-bottom: 4px solid var(--hope-blue);
+    }
 
-/* GLOBAL */
-body {
-  font-family: 'Inter', sans-serif;
-  color: var(--hope-black);
-}
+    .brand-hope {
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
 
-/* NAVBAR */
-.navbar {
-  border-bottom: 4px solid var(--hope-blue);
-}
-.brand-hope {
-  font-weight: 900;
-  letter-spacing: -1px;
-}
-.brand-hope span {
-  color: var(--hope-blue);
-}
-.nav-link.active {
-  font-weight: 900;
-  color: var(--hope-blue) !important;
-  border-bottom: 3px solid var(--hope-blue);
-}
+    .brand-hope span {
+      color: var(--hope-blue);
+    }
 
-/* HERO */
-.hero {
-  padding: 120px 0;
-  background:
-    linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.9)),
-    url("https://images.unsplash.com/photo-1519681393784-d120267933ba") center/cover;
-}
+    .nav-link.active {
+      font-weight: 900;
+      color: var(--hope-blue) !important;
+      border-bottom: 3px solid var(--hope-blue);
+    }
 
-/* TITLES */
-.section-title {
-  font-weight: 900;
-  text-transform: uppercase;
-}
+    .hero {
+      padding: 120px 0;
+      background:
+        linear-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .9)),
+        url("https://images.unsplash.com/photo-1519681393784-d120267933ba") center/cover;
+    }
 
-/* BLUE LINE */
-.blue-line {
-  border-left: 6px solid var(--hope-blue);
-  padding-left: 20px;
-}
+    .section-title {
+      font-weight: 900;
+      text-transform: uppercase;
+    }
 
-/* BUTTON */
-.btn-hope {
-  background: var(--hope-black);
-  color: #fff;
-  font-weight: 900;
-  text-transform: uppercase;
-  padding: 14px 35px;
-  border-radius: 0;
-}
-.btn-hope:hover {
-  background: var(--hope-blue);
-}
+    .btn-hope {
+      background: var(--hope-black);
+      color: #fff;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding: 14px 35px;
+      border-radius: 0;
+    }
 
-/* BIBLE BOX */
-.bible-card {
-  border: none;
-  background: #f8f9fa;
-  border-left: 10px solid var(--hope-black);
-  transition: .3s cubic-bezier(.16,1,.3,1);
-}
-.bible-card:hover {
-  border-left-color: var(--hope-blue);
-  box-shadow: 0 18px 30px rgba(0,0,0,.1);
-}
+    .btn-hope:hover {
+      background: var(--hope-blue);
+    }
 
-/* VERSE BOX */
-.verse-box {
-  background: #fff;
-  border-left: 10px solid var(--hope-blue);
-  padding: 25px;
-  margin-top: 20px;
-  box-shadow: 0 18px 30px rgba(0,0,0,.05);
-}
+    .verse-box {
+      background: #fff;
+      border-left: 10px solid var(--hope-blue);
+      padding: 25px;
+      margin-top: 20px;
+      box-shadow: 0 18px 30px rgba(0, 0, 0, .05);
+    }
 
-/* ANIMATIONS */
-.fade-in {
-  animation: fadeIn .8s ease;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    .verse {
+      padding: 8px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background .25s;
+    }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .hero {
-    padding: 70px 0;
-  }
-}
-</style>
+    .verse:hover {
+      background: #eaf5ff;
+    }
+
+    .verse.highlighted {
+      background: #fff3cd;
+      border-left: 4px solid var(--hope-blue);
+      padding-left: 10px;
+    }
+
+    .floating-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 30px;
+      z-index: 9999;
+      border-radius: 50px;
+      padding: 12px 18px;
+      font-weight: 900;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-  <div class="container">
-    <a class="navbar-brand brand-hope" href="index.html">
-      HOPE <span>COMMUNITY</span>
-    </a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-hope" href="index.html">
+        HOPE <span>COMMUNITY</span>
+      </a>
 
-    <!-- HAMBURGER MENU -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- NAV LINKS -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto fw-bold">
-        <li class="nav-item"><a class="nav-link" href="missions.html">MISSIONS</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#">WORD OF GOD</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
-      </ul>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto fw-bold">
+          <li class="nav-item"><a class="nav-link" href="missions.html">MISSIONS</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">WORD OF GOD</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- HERO -->
-<section class="hero fade-in">
-  <div class="container">
-    <h1 class="section-title mb-3">Word of God</h1>
-    <p class="lead col-lg-7">
-      “Your word is a lamp to my feet and a light to my path.” — Psalm 119:105
-    </p>
-  </div>
-</section>
+  <section class="hero">
+    <div class="container">
+      <h1 class="section-title mb-3">Word of God</h1>
+      <p class="lead col-lg-7">
+        “Your word is a lamp to my feet and a light to my path.” — Psalm 119:105
+      </p>
+    </div>
+  </section>
 
-<!-- BIBLE READER -->
-<section class="container my-5 py-5 fade-in">
-  <h2 class="section-title mb-4">Read the Bible</h2>
+  <section class="container my-5 py-5">
+    <h2 class="section-title mb-4">Read the Bible</h2>
 
-  <div class="row g-3 mb-4">
-    <div class="col-md-4">
-     <select id="book" class="form-select">
-  <optgroup label="OLD TESTAMENT">
-    <option>Genesis</option><option>Exodus</option><option>Leviticus</option>
-    <option>Numbers</option><option>Deuteronomy</option><option>Joshua</option>
-    <option>Judges</option><option>Ruth</option><option>1 Samuel</option>
-    <option>2 Samuel</option><option>1 Kings</option><option>2 Kings</option>
-    <option>1 Chronicles</option><option>2 Chronicles</option><option>Ezra</option>
-    <option>Nehemiah</option><option>Esther</option><option>Job</option>
-    <option>Psalms</option><option>Proverbs</option><option>Ecclesiastes</option>
-    <option>Song of Solomon</option><option>Isaiah</option><option>Jeremiah</option>
-    <option>Lamentations</option><option>Ezekiel</option><option>Daniel</option>
-    <option>Hosea</option><option>Joel</option><option>Amos</option>
-    <option>Obadiah</option><option>Jonah</option><option>Micah</option>
-    <option>Nahum</option><option>Habakkuk</option><option>Zephaniah</option>
-    <option>Haggai</option><option>Zechariah</option><option>Malachi</option>
-  </optgroup>
+    <div class="row g-3 mb-4">
+      <div class="col-md-4">
+        <select id="book" class="form-select" onchange="loadChapters()">
+          <optgroup label="OLD TESTAMENT">
+            <option>Genesis</option>
+            <option>Exodus</option>
+            <option>Leviticus</option>
+            <option>Numbers</option>
+            <option>Deuteronomy</option>
+            <option>Joshua</option>
+            <option>Judges</option>
+            <option>Ruth</option>
+            <option>1 Samuel</option>
+            <option>2 Samuel</option>
+            <option>1 Kings</option>
+            <option>2 Kings</option>
+            <option>1 Chronicles</option>
+            <option>2 Chronicles</option>
+            <option>Ezra</option>
+            <option>Nehemiah</option>
+            <option>Esther</option>
+            <option>Job</option>
+            <option>Psalms</option>
+            <option>Proverbs</option>
+            <option>Ecclesiastes</option>
+            <option>Song of Solomon</option>
+            <option>Isaiah</option>
+            <option>Jeremiah</option>
+            <option>Lamentations</option>
+            <option>Ezekiel</option>
+            <option>Daniel</option>
+            <option>Hosea</option>
+            <option>Joel</option>
+            <option>Amos</option>
+            <option>Obadiah</option>
+            <option>Jonah</option>
+            <option>Micah</option>
+            <option>Nahum</option>
+            <option>Habakkuk</option>
+            <option>Zephaniah</option>
+            <option>Haggai</option>
+            <option>Zechariah</option>
+            <option>Malachi</option>
+          </optgroup>
+          <optgroup label="NEW TESTAMENT">
+            <option>Matthew</option>
+            <option>Mark</option>
+            <option>Luke</option>
+            <option>John</option>
+            <option>Acts</option>
+            <option>Romans</option>
+            <option>1 Corinthians</option>
+            <option>2 Corinthians</option>
+            <option>Galatians</option>
+            <option>Ephesians</option>
+            <option>Philippians</option>
+            <option>Colossians</option>
+            <option>1 Thessalonians</option>
+            <option>2 Thessalonians</option>
+            <option>1 Timothy</option>
+            <option>2 Timothy</option>
+            <option>Titus</option>
+            <option>Philemon</option>
+            <option>Hebrews</option>
+            <option>James</option>
+            <option>1 Peter</option>
+            <option>2 Peter</option>
+            <option>1 John</option>
+            <option>2 John</option>
+            <option>3 John</option>
+            <option>Jude</option>
+            <option>Revelation</option>
+          </optgroup>
+        </select>
+      </div>
 
-  <optgroup label="NEW TESTAMENT">
-    <option>Matthew</option><option>Mark</option><option>Luke</option>
-    <option>John</option><option>Acts</option><option>Romans</option>
-    <option>1 Corinthians</option><option>2 Corinthians</option>
-    <option>Galatians</option><option>Ephesians</option><option>Philippians</option>
-    <option>Colossians</option><option>1 Thessalonians</option>
-    <option>2 Thessalonians</option><option>1 Timothy</option><option>2 Timothy</option>
-    <option>Titus</option><option>Philemon</option><option>Hebrews</option>
-    <option>James</option><option>1 Peter</option><option>2 Peter</option>
-    <option>1 John</option><option>2 John</option><option>3 John</option>
-    <option>Jude</option><option>Revelation</option>
-  </optgroup>
-</select>
+      <div class="col-md-4">
+        <select id="chapter" class="form-select" onchange="loadVerses()">
+          <option value="">Select Chapter</option>
+        </select>
+      </div>
 
+      <div class="col-md-4">
+        <select id="verse" class="form-select">
+          <option value="">All Verses</option>
+        </select>
+      </div>
     </div>
 
-    <div class="col-md-4">
-      <input id="chapter" class="form-control" placeholder="Chapter (e.g. 3)">
-    </div>
+    <button class="btn btn-hope w-100 mb-3" onclick="loadBible()">Read</button>
+    <button class="btn btn-danger w-100 mb-4" onclick="clearSaved()">Clear Saved Verses</button>
 
-    <div class="col-md-4">
-      <button class="btn btn-hope w-100" onclick="loadBible()">Read</button>
-    </div>
-  </div>
+    <div id="result"></div>
+  </section>
 
-  <div id="result"></div>
-</section>
+  <button id="nextChapterBtn" class="btn btn-primary floating-btn" onclick="nextChapter()">
+    Next Chapter
+  </button>
 
-<!-- SCRIPT -->
-<script>
-async function loadBible() {
-  const book = document.getElementById("book").value;
-  const chapter = document.getElementById("chapter").value;
-  const result = document.getElementById("result");
+  <script>
+    const chapterSelect = document.getElementById("chapter");
+    const verseSelect = document.getElementById("verse");
+    const bookSelect = document.getElementById("book");
+    let savedVerses = JSON.parse(localStorage.getItem("savedVerses")) || [];
 
-  if (!chapter) {
-    result.innerHTML = `<div class="alert alert-warning">Please enter a chapter number.</div>`;
-    return;
-  }
+    // 📌 Chapter counts per book (REAL numbers)
+    const chaptersPerBook = {
+      "Genesis": 50, "Exodus": 40, "Leviticus": 27, "Numbers": 36, "Deuteronomy": 34,
+      "Joshua": 24, "Judges": 21, "Ruth": 4, "1 Samuel": 31, "2 Samuel": 24,
+      "1 Kings": 22, "2 Kings": 25, "1 Chronicles": 29, "2 Chronicles": 36, "Ezra": 10,
+      "Nehemiah": 13, "Esther": 10, "Job": 42, "Psalms": 150, "Proverbs": 31,
+      "Ecclesiastes": 12, "Song of Solomon": 8, "Isaiah": 66, "Jeremiah": 52,
+      "Lamentations": 5, "Ezekiel": 48, "Daniel": 12, "Hosea": 14, "Joel": 3,
+      "Amos": 9, "Obadiah": 1, "Jonah": 4, "Micah": 7, "Nahum": 3,
+      "Habakkuk": 3, "Zephaniah": 3, "Haggai": 2, "Zechariah": 14, "Malachi": 4,
+      "Matthew": 28, "Mark": 16, "Luke": 24, "John": 21, "Acts": 28,
+      "Romans": 16, "1 Corinthians": 16, "2 Corinthians": 13, "Galatians": 6, "Ephesians": 6,
+      "Philippians": 4, "Colossians": 4, "1 Thessalonians": 5, "2 Thessalonians": 3, "1 Timothy": 6,
+      "2 Timothy": 4, "Titus": 3, "Philemon": 1, "Hebrews": 13, "James": 5,
+      "1 Peter": 5, "2 Peter": 3, "1 John": 5, "2 John": 1, "3 John": 1,
+      "Jude": 1, "Revelation": 22
+    };
 
-  try {
-    const res = await fetch(`https://bible-api.com/${book}%20${chapter}`);
-    const data = await res.json();
+    function loadChapters() {
+      const book = bookSelect.value;
+      const totalChapters = chaptersPerBook[book];
 
-    if (data.error) {
-      result.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
-      return;
+      chapterSelect.innerHTML = `<option value="">Select Chapter</option>`;
+      for (let i = 1; i <= totalChapters; i++) {
+        chapterSelect.innerHTML += `<option value="${i}">Chapter ${i}</option>`;
+      }
+      verseSelect.innerHTML = `<option value="">All Verses</option>`;
     }
 
-    let html = `<div class="verse-box"><h5 class="fw-bold mb-3">${data.reference}</h5>`;
-    data.verses.forEach(v => {
-      html += `<p><b>${v.verse}</b> ${v.text}</p>`;
-    });
-    html += `</div>`;
-    result.innerHTML = html;
+    async function loadVerses() {
+      const book = bookSelect.value;
+      const chapter = chapterSelect.value;
+      if (!chapter) return;
 
-  } catch {
-    result.innerHTML = `<div class="alert alert-danger">Unable to load verses.</div>`;
-  }
-}
-</script>
+      const res = await fetch(`https://bible-api.com/${book} ${chapter}`);
+      const data = await res.json();
 
-<!-- BOOTSTRAP JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      verseSelect.innerHTML = `<option value="">All Verses</option>`;
+      for (let i = 1; i <= data.verses.length; i++) {
+        verseSelect.innerHTML += `<option value="${i}">Verse ${i}</option>`;
+      }
+    }
 
+    async function loadBible() {
+      const book = bookSelect.value;
+      const chapter = chapterSelect.value;
+      const verse = verseSelect.value;
+      const result = document.getElementById("result");
+
+      if (!chapter) {
+        result.innerHTML = `<div class="alert alert-warning">Please select a chapter.</div>`;
+        return;
+      }
+
+      const ref = verse ? `${book} ${chapter}:${verse}` : `${book} ${chapter}`;
+      const res = await fetch(`https://bible-api.com/${ref}`);
+      const data = await res.json();
+
+      let html = `<div class="verse-box"><h5 class="fw-bold mb-3">${data.reference}</h5>`;
+
+      data.verses.forEach(v => {
+        const id = `${book}-${chapter}-${v.verse}`;
+        const active = savedVerses.includes(id) ? "highlighted" : "";
+
+        html += `
+          <p class="verse ${active}" data-id="${id}">
+            <b>${v.verse}</b> ${v.text}
+          </p>`;
+      });
+
+      html += `</div>`;
+      result.innerHTML = html;
+
+      document.querySelectorAll(".verse").forEach(el => {
+        el.onclick = () => toggleSave(el);
+      });
+    }
+
+    function toggleSave(el) {
+      const id = el.dataset.id;
+      el.classList.toggle("highlighted");
+
+      if (savedVerses.includes(id)) {
+        savedVerses = savedVerses.filter(v => v !== id);
+      } else {
+        savedVerses.push(id);
+      }
+
+      localStorage.setItem("savedVerses", JSON.stringify(savedVerses));
+    }
+
+    function clearSaved() {
+      if (!confirm("Clear all saved verses?")) return;
+      localStorage.removeItem("savedVerses");
+      savedVerses = [];
+      document.querySelectorAll(".verse").forEach(v => v.classList.remove("highlighted"));
+    }
+
+    function nextChapter() {
+      const book = bookSelect.value;
+      const current = parseInt(chapterSelect.value);
+      const total = chaptersPerBook[book];
+
+      if (!current) {
+        alert("Please select a chapter first.");
+        return;
+      }
+
+      if (current >= total) {
+        alert("This is the last chapter.");
+        return;
+      }
+
+      chapterSelect.value = current + 1;
+      loadVerses();
+      loadBible();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Initialize chapters
+    loadChapters();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

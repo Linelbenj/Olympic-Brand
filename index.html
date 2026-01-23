@@ -1,275 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Hope Community | Running the Race of Faith</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Hope Community | Running the Race of Faith</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Favicon -->
-<link rel="icon" href="img/logo.jpg" type="image/png">
+  <link rel="icon" href="img/logo.jpg" type="image/png">
 
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:ital,wght@1,700&display=swap"
+    rel="stylesheet">
 
-<style>
-  :root {
-    --active-accent: #0081C8;
-    --hope-black: #000;
-    --bg-light: #f6f8fb;
-  }
+  <style>
+    :root {
+      --active-accent: #0081C8;
+      --hope-black: #000;
+      --bg-light: #f6f8fb;
+    }
 
-  body {
-    font-family: 'Inter', sans-serif;
-    color: var(--hope-black);
-    scroll-behavior: smooth;
-    background: var(--bg-light);
-  }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--hope-black);
+      scroll-behavior: smooth;
+      background: var(--bg-light);
+    }
 
-  /* NAVBAR */
-  .navbar {
-    border-bottom: 4px solid var(--active-accent);
-    background: #fff;
-  }
-  .brand-hope {
-    font-weight: 900;
-    letter-spacing: -2px;
-    text-transform: uppercase;
-    font-size: 1.7rem;
-  }
-  .brand-hope span {
-    color: var(--active-accent);
-  }
-  .nav-link {
-    font-weight: 700;
-    color: #111 !important;
-  }
-  .nav-link.active {
-    font-weight: 900;
-    color: var(--active-accent) !important;
-    border-bottom: 3px solid var(--active-accent);
-  }
+    .navbar {
+      border-bottom: 4px solid var(--active-accent);
+      background: #fff;
+    }
 
-  /* HERO */
-  .hero-section {
-    padding: 120px 0;
-    background:
-      linear-gradient(rgba(255,255,255,.88), rgba(255,255,255,.88)),
-      url("https://images.unsplash.com/photo-1529070538774-1843cb3265df") center/cover;
-  }
-  .hero-title {
-    font-weight: 900;
-    font-size: clamp(3rem, 8vw, 5.5rem);
-    line-height: .95;
-    text-transform: uppercase;
-  }
-  .scripture-tag {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    color: var(--active-accent);
-    font-size: 1.2rem;
-    display: block;
-    margin-bottom: 1rem;
-  }
+    .brand-hope {
+      font-weight: 900;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+      font-size: 1.7rem;
+    }
 
-  /* BUTTON */
-  .btn-hope {
-    background: var(--hope-black);
-    color: #fff;
-    font-weight: 900;
-    padding: 14px 35px;
-    border-radius: 0;
-    text-transform: uppercase;
-  }
-  .btn-hope:hover {
-    background: var(--active-accent);
-    color: #fff;
-  }
+    .brand-hope span {
+      color: var(--active-accent);
+    }
 
-  /* SECTIONS */
-  .section-title {
-    font-weight: 900;
-    text-transform: uppercase;
-  }
-  .blue-line {
-    border-left: 6px solid var(--active-accent);
-    padding-left: 20px;
-  }
+    .nav-link {
+      font-weight: 700;
+      color: #111 !important;
+    }
 
-  /* FAITH BAR */
-  .faith-bar {
-    background: #000;
-    color: #fff;
-    transform: skewY(-3deg);
-    padding: 70px 0;
-    margin-top: 80px;
-  }
-  .faith-bar .container {
-    transform: skewY(3deg);
-  }
+    .nav-link.active {
+      font-weight: 900;
+      color: var(--active-accent) !important;
+      border-bottom: 3px solid var(--active-accent);
+    }
 
-  /* ANIMATIONS */
-  .fade-in {
-    animation: fadeIn .8s ease;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+    .hero-section {
+      padding: 120px 0;
+      background:
+        linear-gradient(rgba(255, 255, 255, .88), rgba(255, 255, 255, .88)),
+        url("https://images.unsplash.com/photo-1529070538774-1843cb3265df") center/cover;
+    }
 
-  /* FOOTER */
-  footer {
-    border-top: 4px solid var(--active-accent);
-    background: #fff;
-  }
+    .hero-title {
+      font-weight: 900;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      line-height: .95;
+      text-transform: uppercase;
+    }
 
-  /* MOBILE */
-  @media (max-width: 768px) {
-    .hero-section { padding: 90px 0; }
-    .hero-title { font-size: 3rem; }
-  }
-</style>
+    .scripture-tag {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--active-accent);
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .btn-hope {
+      background: var(--hope-black);
+      color: #fff;
+      font-weight: 900;
+      padding: 14px 35px;
+      border-radius: 0;
+      text-transform: uppercase;
+    }
+
+    .btn-hope:hover {
+      background: var(--active-accent);
+      color: #fff;
+    }
+
+    .section-title {
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .blue-line {
+      border-left: 6px solid var(--active-accent);
+      padding-left: 20px;
+    }
+
+    .faith-bar {
+      background: #000;
+      color: #fff;
+      transform: skewY(-3deg);
+      padding: 70px 0;
+      margin-top: 80px;
+    }
+
+    .faith-bar .container {
+      transform: skewY(3deg);
+    }
+
+    .fade-in {
+      animation: fadeIn .8s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      border-top: 4px solid var(--active-accent);
+      background: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 90px 0;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-  <div class="container">
-    <a class="navbar-brand brand-hope d-flex align-items-center gap-2" href="index.html">
-      HOPE <span>COMMUNITY</span>
-    </a>
-
-    <!-- HAMBURGER MENU -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- NAV LINKS -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto fw-bold">
-        <li class="nav-item"><a class="nav-link" href="missions.html">MISSIONS</a></li>
-        <li class="nav-item"><a class="nav-link" href="word.html">WORD OF GOD</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header class="hero-section fade-in">
-  <div class="container">
-    <span class="scripture-tag">“Be still, and know that I am God.” — Psalm 46:10</span>
-    <h1 class="hero-title mb-4">God is <br>Bigger than <br>Your Doubts</h1>
-    <p class="lead col-lg-7 mb-5">
-      Hope Community is a global faith-based family running the race of faith
-      together—rooted in prayer, strengthened by God’s Word, and united in love.
-    </p>
-    <a href="word.html" class="btn btn-hope">Read the Word</a>
-  </div>
-</header>
-
-<!-- VIDEO SECTION -->
-<section class="container my-5 py-5 fade-in">
-
-  <!-- THUMBNAIL LINK -->
-  <div class="text-center">
-    <a href="https://youtu.be/_p2XIUK9VgA" target="_blank" rel="noopener noreferrer">
-      <img src="https://img.youtube.com/vi/_p2XIUK9VgA/maxresdefault.jpg" 
-           class="img-fluid rounded shadow" alt="Watch on YouTube">
-    </a>
-    <p class="mt-3">
-      <a href="https://youtu.be/_p2XIUK9VgA" target="_blank" class="btn btn-hope">
-        Watch on YouTube
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-hope d-flex align-items-center gap-2" href="index.html">
+        HOPE <span>COMMUNITY</span>
       </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto fw-bold">
+          <li class="nav-item"><a class="nav-link" href="missions.html">MISSIONS</a></li>
+          <li class="nav-item"><a class="nav-link" href="word.html">WORD OF GOD</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-section fade-in">
+    <div class="container">
+      <span class="scripture-tag">“Be still, and know that I am God.” — Psalm 46:10</span>
+      <h1 class="hero-title mb-4">God is <br>Bigger than <br>Your Doubts</h1>
+      <p class="lead col-lg-7 mb-5">
+        Hope Community is a global faith-based family running the race of faith
+        together—rooted in prayer, strengthened by God’s Word, and united in love.
+      </p>
+      <a href="word.html" class="btn btn-hope">Read the Word</a>
+    </div>
+  </header>
+
+  <section class="container my-5 py-5 fade-in">
+
+    <div class="text-center">
+      <a href="https://youtu.be/_p2XIUK9VgA" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.youtube.com/vi/_p2XIUK9VgA/maxresdefault.jpg" class="img-fluid rounded shadow"
+          alt="Watch on YouTube">
+      </a>
+      <p class="mt-3">
+        <a href="https://youtu.be/_p2XIUK9VgA" target="_blank" class="btn btn-hope">
+          Watch on YouTube
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section class="container my-5 py-5 fade-in">
+    <div class="row g-5">
+      <div class="col-md-6">
+        <h2 class="section-title">Our Mission</h2>
+        <div class="blue-line mt-3">
+          <p class="lead">
+            To guide people into a deeper relationship with Jesus Christ
+            through prayer, discipleship, and service.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h2 class="section-title">Our Vision</h2>
+        <div class="blue-line mt-3">
+          <p class="lead">
+            A united global community living out God’s Word,
+            impacting lives, and finishing the race of faith with perseverance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-light py-5 fade-in">
+    <div class="container">
+      <h2 class="section-title mb-4">What We Believe</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="p-4 bg-white h-100 blue-line">
+            <h5 class="fw-bold">The Word of God</h5>
+            <p>The Bible is God’s living truth and the foundation of our faith.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white h-100 blue-line">
+            <h5 class="fw-bold">Prayer & Faith</h5>
+            <p>Prayer strengthens our walk and aligns our hearts with God.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white h-100 blue-line">
+            <h5 class="fw-bold">Community & Love</h5>
+            <p>We grow better together through unity, compassion, and service.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-5 py-5 text-center fade-in">
+    <span class="scripture-tag">
+      “Let us run with perseverance the race marked out for us.” — Hebrews 12:1
+    </span>
+    <p class="lead col-lg-8 mx-auto">
+      Faith is a lifelong journey. We press forward together,
+      trusting God at every step.
     </p>
-  </div>
-</section>
+  </section>
 
-<!-- MISSION & VISION -->
-<section class="container my-5 py-5 fade-in">
-  <div class="row g-5">
-    <div class="col-md-6">
-      <h2 class="section-title">Our Mission</h2>
-      <div class="blue-line mt-3">
-        <p class="lead">
-          To guide people into a deeper relationship with Jesus Christ
-          through prayer, discipleship, and service.
-        </p>
-      </div>
+  <section class="faith-bar text-center fade-in">
+    <div class="container">
+      <h2 class="fw-bold text-uppercase mb-3">Join the Journey</h2>
+      <p class="mb-4">
+        Be part of a faith-filled community committed to hope, truth, and love.
+      </p>
+      <a href="missions.html" class="btn btn-hope me-2">Our Missions</a>
+      <a href="word.html" class="btn btn-outline-light fw-bold">Read Scripture</a>
     </div>
-    <div class="col-md-6">
-      <h2 class="section-title">Our Vision</h2>
-      <div class="blue-line mt-3">
-        <p class="lead">
-          A united global community living out God’s Word,
-          impacting lives, and finishing the race of faith with perseverance.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- WHAT WE BELIEVE -->
-<section class="bg-light py-5 fade-in">
-  <div class="container">
-    <h2 class="section-title mb-4">What We Believe</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="p-4 bg-white h-100 blue-line">
-          <h5 class="fw-bold">The Word of God</h5>
-          <p>The Bible is God’s living truth and the foundation of our faith.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="p-4 bg-white h-100 blue-line">
-          <h5 class="fw-bold">Prayer & Faith</h5>
-          <p>Prayer strengthens our walk and aligns our hearts with God.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="p-4 bg-white h-100 blue-line">
-          <h5 class="fw-bold">Community & Love</h5>
-          <p>We grow better together through unity, compassion, and service.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <footer class="py-4 text-center">
+    <p class="fw-bold mb-1">HOPE COMMUNITY GLOBAL</p>
+    <p class="small text-muted">Running the Race for an Eternal Crown © 2026</p>
+  </footer>
 
-<!-- SCRIPTURE FOCUS -->
-<section class="container my-5 py-5 text-center fade-in">
-  <span class="scripture-tag">
-    “Let us run with perseverance the race marked out for us.” — Hebrews 12:1
-  </span>
-  <p class="lead col-lg-8 mx-auto">
-    Faith is a lifelong journey. We press forward together,
-    trusting God at every step.
-  </p>
-</section>
-
-<!-- CALL TO ACTION -->
-<section class="faith-bar text-center fade-in">
-  <div class="container">
-    <h2 class="fw-bold text-uppercase mb-3">Join the Journey</h2>
-    <p class="mb-4">
-      Be part of a faith-filled community committed to hope, truth, and love.
-    </p>
-    <a href="missions.html" class="btn btn-hope me-2">Our Missions</a>
-    <a href="word.html" class="btn btn-outline-light fw-bold">Read Scripture</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="py-4 text-center">
-  <p class="fw-bold mb-1">HOPE COMMUNITY GLOBAL</p>
-  <p class="small text-muted">Running the Race for an Eternal Crown © 2026</p>
-</footer>
-
-<!-- BOOTSTRAP JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
